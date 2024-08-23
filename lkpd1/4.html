@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opacity</title>
+</head>
+<body>
+
+    <select id="imageSelect">
+        <option value="gambar1.png">Gambar 1</option>
+        <option value="gambar2.png">Gambar 2</option>
+        <option value="gambar3.png">Gambar 3</option>
+    </select>
+
+    <select id="opacitySelect">
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0.2">0.2</option>
+    </select>
+
+    <input type="submit" value="Ubah" onclick="changeImageAndOpacity()">
+
+    <br><br>
+
+    <img id="imageDisplay" src="gambar1.png" alt="Selected Image" style="opacity: 1; width: 300px;">
+
+    <script>
+        function changeImageAndOpacity() {
+            var imageSelect = document.getElementById("imageSelect");
+            var opacitySelect = document.getElementById("opacitySelect");
+            var imageDisplay = document.getElementById("imageDisplay");
+
+            var selectedImage = imageSelect.value;
+            var selectedOpacity = opacitySelect.value;
+
+            imageDisplay.src = selectedImage;
+            imageDisplay.style.opacity = selectedOpacity;
+        }
+    </script>
+
+</body>
+</html>
